@@ -4,25 +4,29 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>ScrollifyJs | qwguo blog</title>
+    <title>在css3中有两个控制js事件行为的属性 | qwguo blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="qwguo">
     
 
     
-    <meta name="description" content="jQuery Scrollify是一个jQuery插件，他可以实现整屏滚动。    参数 说明 默认值     host 远程主机的地址    user 使用者名称    root 远程主机的根目录    port 端口 22   delete 删除远程主机上的旧文件 true   verbose 显示调试信息 true   ignore_errors 忽略错误 false">
-<meta name="keywords" content="前端,Javascript,Jquery">
+    <meta name="description" content="pointer-events 属性指定在什么情况下某个特定的图形元素可以成为鼠标事件的 target，这个属性主要应用在SVG元素上，这篇文章主要介绍的是应用在HTML的DOM元素上  语法：pointer-events: auto | none | inherit | initial | unset;">
+<meta name="keywords" content="CSS3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ScrollifyJs">
-<meta property="og:url" content="qwguo.github.io/2019/02/14/ScrollifyJs/index.html">
+<meta property="og:title" content="在css3中有两个控制js事件行为的属性">
+<meta property="og:url" content="qwguo.github.io/2019/12/17/CSS3/cssEvents/index.html">
 <meta property="og:site_name" content="qwguo blog">
-<meta property="og:description" content="jQuery Scrollify是一个jQuery插件，他可以实现整屏滚动。    参数 说明 默认值     host 远程主机的地址    user 使用者名称    root 远程主机的根目录    port 端口 22   delete 删除远程主机上的旧文件 true   verbose 显示调试信息 true   ignore_errors 忽略错误 false">
+<meta property="og:description" content="pointer-events 属性指定在什么情况下某个特定的图形元素可以成为鼠标事件的 target，这个属性主要应用在SVG元素上，这篇文章主要介绍的是应用在HTML的DOM元素上  语法：pointer-events: auto | none | inherit | initial | unset;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-11T05:58:35.434Z">
+<meta property="og:image" content="qwguo.github.io/2019/12/17/CSS3/cssEvents/pointer-events-caniuse.png">
+<meta property="og:image" content="/image/650-650.jpg">
+<meta property="og:image" content="qwguo.github.io/2019/12/17/CSS3/cssEvents/touch-action-caniuse.png">
+<meta property="og:updated_time" content="2019-12-18T03:42:03.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ScrollifyJs">
-<meta name="twitter:description" content="jQuery Scrollify是一个jQuery插件，他可以实现整屏滚动。    参数 说明 默认值     host 远程主机的地址    user 使用者名称    root 远程主机的根目录    port 端口 22   delete 删除远程主机上的旧文件 true   verbose 显示调试信息 true   ignore_errors 忽略错误 false">
+<meta name="twitter:title" content="在css3中有两个控制js事件行为的属性">
+<meta name="twitter:description" content="pointer-events 属性指定在什么情况下某个特定的图形元素可以成为鼠标事件的 target，这个属性主要应用在SVG元素上，这篇文章主要介绍的是应用在HTML的DOM元素上  语法：pointer-events: auto | none | inherit | initial | unset;">
+<meta name="twitter:image" content="qwguo.github.io/2019/12/17/CSS3/cssEvents/pointer-events-caniuse.png">
 
     
     <link rel="alternative" href="/atom.xml" title="qwguo blog" type="application/atom+xml">
@@ -82,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/02/14/ScrollifyJs/" title="ScrollifyJs" itemprop="url">ScrollifyJs</a>
+      <a href="/2019/12/17/CSS3/cssEvents/" title="在css3中有两个控制js事件行为的属性" itemprop="url">在css3中有两个控制js事件行为的属性</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="qwguo" target="_blank" itemprop="author">qwguo</a>
 		
   </p><p class="article-time">
-    <time datetime="2019-02-14T06:16:15.000Z" itemprop="datePublished"> Published 2019-02-14</time>
+    <time datetime="2019-12-17T12:40:16.000Z" itemprop="datePublished"> Published 2019-12-17</time>
     
   </p>
 </header>
@@ -98,57 +102,38 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-Scrollify"><span class="toc-number">1.</span> <span class="toc-text">jQuery Scrollify</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pointer-events"><span class="toc-number">1.</span> <span class="toc-text">pointer-events</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#touch-action"><span class="toc-number">2.</span> <span class="toc-text">touch-action</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="jQuery-Scrollify"><a href="#jQuery-Scrollify" class="headerlink" title="jQuery Scrollify"></a>jQuery Scrollify</h2><p>是一个jQuery插件，他可以实现整屏滚动。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>host</td>
-<td style="text-align:center">远程主机的地址</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td>user</td>
-<td style="text-align:center">使用者名称</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td>root</td>
-<td style="text-align:center">远程主机的根目录</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td>port</td>
-<td style="text-align:center">端口</td>
-<td style="text-align:center">22</td>
-</tr>
-<tr>
-<td>delete</td>
-<td style="text-align:center">删除远程主机上的旧文件</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td>verbose</td>
-<td style="text-align:center">显示调试信息</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td>ignore_errors</td>
-<td style="text-align:center">忽略错误</td>
-<td style="text-align:center">false</td>
-</tr>
-</tbody>
-</table>
+		<h1 id="pointer-events"><a href="#pointer-events" class="headerlink" title="pointer-events"></a>pointer-events</h1><blockquote>
+<p>属性指定在什么情况下某个特定的图形元素可以成为鼠标事件的 <code>target</code>，这个属性主要应用在<code>SVG</code>元素上，这篇文章主要介绍的是应用在HTML的DOM元素上</p>
+</blockquote>
+<p><strong>语法：</strong><br><code>pointer-events: auto | none | inherit | initial | unset;</code><br><a id="more"></a></p>
+<ul>
+<li><code>auto</code>：自动表示使用DOM的默认行为。</li>
+<li><code>none</code>：表示该元素不执行任何的js事件，包括其后代元素。但是，当其后代元素的此属性指定其他值时，鼠标事件可以指向后代元素，在这种情况下，鼠标事件将在捕获或冒泡阶段触发父元素的事件侦听器。</li>
+<li><code>inherit</code>：表示继承父级的<code>pointer-events</code>的值。</li>
+<li><code>initial</code>：初始化，和<code>auto</code>效果一样，表示执行元素的默认行为。</li>
+<li><code>unset</code>：未定义，继承父级行为。</li>
+</ul>
+<p><strong>兼容性：</strong><br><img src="pointer-events-caniuse.png" alt="image"><br><img src="/image/650-650.jpg" alt="image"><br><a href="https://caniuse.com/#search=pointer-events" target="_blank" rel="noopener">查看兼容性详情</a></p>
+<p>查看案例 <a href="https://codepen.io/qwguo88/pen/MWWZWBj" target="_blank" rel="noopener">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="pointer-events" src="https://codepen.io/qwguo88/embed/MWWZWBj?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/MWWZWBj" target="_blank" rel="noopener">pointer-events</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" target="_blank" rel="noopener">@qwguo88</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
+
+<h1 id="touch-action"><a href="#touch-action" class="headerlink" title="touch-action"></a>touch-action</h1><blockquote>
+<p>touch-action是控制手势事件过滤的CSS属性，为开发人员提供了一种声明性机制，以有选择地禁用触摸滚动（在一个或两个轴上）或双击缩放，用于设置触摸屏用户如何操纵元素的区域</p>
+</blockquote>
+<p><strong>语法：</strong><br><code>touch-action: auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation;</code></p>
+<ul>
+<li><code>auto</code>：初始化值，表示根据浏览器决定当用户触控事件发生时执行默认行为。</li>
+<li><code>none</code>：禁用touch事件，表示把元素上的触屏事件行为禁用，当用户在元素上触发触控行为时不进行任何操作。</li>
+<li><code>pan-x</code>：表示只开启x轴的滑动行为，也就是左右滑动。</li>
+<li><code>pan-left</code>：表示只开启元素向左滑动。</li>
+</ul>
+<p><strong>兼容性：</strong><br><img src="touch-action-caniuse.png" alt="image"><br><a href="https://caniuse.com/#search=touch-action" target="_blank" rel="noopener">查看兼容性详情</a></p>
+<p>查看案例 <a href="https://codepen.io/qwguo88/pen/YzzdyMd" target="_blank" rel="noopener">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="touch-action" src="https://codepen.io/qwguo88/embed/YzzdyMd?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/YzzdyMd" target="_blank" rel="noopener">touch-action</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" target="_blank" rel="noopener">@qwguo88</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -157,7 +142,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/前端/">前端</a><a href="/tags/Javascript/">Javascript</a><a href="/tags/Jquery/">Jquery</a>
+  <span></span> <a href="/tags/CSS3/">CSS3</a>
   </div>
 
 </div>
@@ -166,7 +151,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="qwguo.github.io/2019/02/14/ScrollifyJs/" data-title="ScrollifyJs | qwguo blog" data-tsina="" class="share clearfix">
+	  <div data-url="qwguo.github.io/2019/12/17/CSS3/cssEvents/" data-title="在css3中有两个控制js事件行为的属性 | qwguo blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -179,14 +164,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/07/20/CSS3/grid/" title="Grid网格布局">
-  <strong>上一篇：</strong><br>
-  <span>
-  Grid网格布局</span>
+
+<div class="next">
+<a href="/2019/12/16/CSS3/flex/" title="flex布局">
+ <strong>下一篇：</strong><br> 
+ <span>flex布局
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -200,7 +185,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-Scrollify"><span class="toc-number">1.</span> <span class="toc-text">jQuery Scrollify</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pointer-events"><span class="toc-number">1.</span> <span class="toc-text">pointer-events</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#touch-action"><span class="toc-number">2.</span> <span class="toc-text">touch-action</span></a></li></ol>
  
   </div>
 
