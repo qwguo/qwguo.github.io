@@ -11,21 +11,20 @@
     
 
     
-    <meta name="description" content="pointer-events 属性指定在什么情况下某个特定的图形元素可以成为鼠标事件的 target，这个属性主要应用在SVG元素上，这篇文章主要介绍的是应用在HTML的DOM元素上  语法：pointer-events: auto | none | inherit | initial | unset;">
+    <meta name="description" content="在css3中pointer-events，touch-action属性的详细使用">
 <meta name="keywords" content="CSS3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在css3中有两个控制js事件行为的属性">
 <meta property="og:url" content="qwguo.github.io/2019/12/17/CSS3/cssEvents/index.html">
 <meta property="og:site_name" content="qwguo blog">
-<meta property="og:description" content="pointer-events 属性指定在什么情况下某个特定的图形元素可以成为鼠标事件的 target，这个属性主要应用在SVG元素上，这篇文章主要介绍的是应用在HTML的DOM元素上  语法：pointer-events: auto | none | inherit | initial | unset;">
+<meta property="og:description" content="在css3中pointer-events，touch-action属性的详细使用">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="/2019/12/17/CSS3/cssEvents/pointer-events-caniuse.png">
-<meta property="og:image" content="/2019/12/17/CSS3/cssEvents/650-650.jpg">
 <meta property="og:image" content="/2019/12/17/CSS3/cssEvents/touch-action-caniuse.png">
-<meta property="og:updated_time" content="2019-12-18T03:42:03.836Z">
+<meta property="og:updated_time" content="2019-12-18T12:10:02.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在css3中有两个控制js事件行为的属性">
-<meta name="twitter:description" content="pointer-events 属性指定在什么情况下某个特定的图形元素可以成为鼠标事件的 target，这个属性主要应用在SVG元素上，这篇文章主要介绍的是应用在HTML的DOM元素上  语法：pointer-events: auto | none | inherit | initial | unset;">
+<meta name="twitter:description" content="在css3中pointer-events，touch-action属性的详细使用">
 <meta name="twitter:image" content="/2019/12/17/CSS3/cssEvents/pointer-events-caniuse.png">
 
     
@@ -117,9 +116,9 @@
 <li><code>initial</code>：初始化，和<code>auto</code>效果一样，表示执行元素的默认行为。</li>
 <li><code>unset</code>：未定义，继承父级行为。</li>
 </ul>
-<p><strong>兼容性：</strong><br><img src="/2019/12/17/CSS3/cssEvents/pointer-events-caniuse.png" alt="image"><br><img src="/2019/12/17/CSS3/cssEvents/650-650.jpg" alt="image"><br><a href="https://caniuse.com/#search=pointer-events" target="_blank" rel="noopener">查看兼容性详情</a></p>
-<p>查看案例 <a href="https://codepen.io/qwguo88/pen/MWWZWBj" target="_blank" rel="noopener">Demo</a></p>
-<iframe height="500" style="width: 100%;" scrolling="no" title="pointer-events" src="https://codepen.io/qwguo88/embed/MWWZWBj?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/MWWZWBj" target="_blank" rel="noopener">pointer-events</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" target="_blank" rel="noopener">@qwguo88</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
+<p><strong>兼容性：</strong><br><img src="/2019/12/17/CSS3/cssEvents/pointer-events-caniuse.png" alt="image"><br><a href="https://caniuse.com/#search=pointer-events" rel="external nofollow noopener noreferrer" target="_blank">查看兼容性详情</a></p>
+<p>查看案例 <a href="https://codepen.io/qwguo88/pen/MWWZWBj" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="pointer-events" src="https://codepen.io/qwguo88/embed/MWWZWBj?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/MWWZWBj" rel="external nofollow noopener noreferrer" target="_blank">pointer-events</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
 
 <h1 id="touch-action"><a href="#touch-action" class="headerlink" title="touch-action"></a>touch-action</h1><blockquote>
 <p>touch-action是控制手势事件过滤的CSS属性，为开发人员提供了一种声明性机制，以有选择地禁用触摸滚动（在一个或两个轴上）或双击缩放，用于设置触摸屏用户如何操纵元素的区域</p>
@@ -131,9 +130,9 @@
 <li><code>pan-x</code>：表示只开启x轴的滑动行为，也就是左右滑动。</li>
 <li><code>pan-left</code>：表示只开启元素向左滑动。</li>
 </ul>
-<p><strong>兼容性：</strong><br><img src="/2019/12/17/CSS3/cssEvents/touch-action-caniuse.png" alt="image"><br><a href="https://caniuse.com/#search=touch-action" target="_blank" rel="noopener">查看兼容性详情</a></p>
-<p>查看案例 <a href="https://codepen.io/qwguo88/pen/YzzdyMd" target="_blank" rel="noopener">Demo</a></p>
-<iframe height="500" style="width: 100%;" scrolling="no" title="touch-action" src="https://codepen.io/qwguo88/embed/YzzdyMd?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/YzzdyMd" target="_blank" rel="noopener">touch-action</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" target="_blank" rel="noopener">@qwguo88</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
+<p><strong>兼容性：</strong><br><img src="/2019/12/17/CSS3/cssEvents/touch-action-caniuse.png" alt="image"><br><a href="https://caniuse.com/#search=touch-action" rel="external nofollow noopener noreferrer" target="_blank">查看兼容性详情</a></p>
+<p>查看案例 <a href="https://codepen.io/qwguo88/pen/YzzdyMd" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="touch-action" src="https://codepen.io/qwguo88/embed/YzzdyMd?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/YzzdyMd" rel="external nofollow noopener noreferrer" target="_blank">touch-action</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -235,13 +234,13 @@
         
           <li>
             
-            	<a href="https://qwguo.github.io/studyNotes/" target="_blank" title="个人学习笔记">笔记录</a>
+            	<a href="https://qwguo.github.io/studyNotes/" target="_blank" title="个人学习笔记" rel="external nofollow noopener noreferrer">笔记录</a>
             
           </li>
         
           <li>
             
-            	<a href="https://qwguo.github.io/EvyunUi/docs/" target="_blank" title="个人开发的前端UI项目">个人UI项目</a>
+            	<a href="https://qwguo.github.io/EvyunUi/docs/" target="_blank" title="个人开发的前端UI项目" rel="external nofollow noopener noreferrer">个人UI项目</a>
             
           </li>
         
@@ -280,7 +279,7 @@
 	<div class="social-font">
 		
 		
-		<a href="https://github.com/qwguo" target="_blank" class="icon-github" title="github"></a>
+		<a href="https://github.com/qwguo" target="_blank" class="icon-github" title="github" rel="external nofollow noopener noreferrer"></a>
 		
 		
 		
@@ -290,14 +289,14 @@
 		
 		
 		
-		<a href="mailto:75624839@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		<a href="mailto:75624839@qq.com" target="_blank" class="icon-email" title="Email Me" rel="external nofollow noopener noreferrer"></a>
 		
 	</div>
 			
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo" rel="external nofollow noopener noreferrer">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman" rel="external nofollow noopener noreferrer">Jacman</a> © 2019 
 		
 		<a href="/about" target="_blank" title="qwguo">qwguo</a>
 		
@@ -504,4 +503,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
-</html>
+
