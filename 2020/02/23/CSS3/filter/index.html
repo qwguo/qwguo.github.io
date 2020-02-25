@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  
+  <meta name="keywords" content="前端开发笔记">
+  <meta name="description" content="在css3中使用filter滤镜设置图像的灰度，褐色，亮度，对比度等效果">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>css3中的filter滤镜使用</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- <link rel="stylesheet" href="/lib/highlight/gruvbox-dark.css"> -->
+  <link rel="stylesheet" href="/lib/codemirror/codemirror.css">
+  <link rel="stylesheet" href="/lib/codemirror/dracula.css">
+</head>
+
+<body>
+  
+  <div class="q page page-left">
+    <div class="page-container">
+      <div class="page-content">
+        <div class="article-main">
+  <div class="article-box">
+    <div class="article-tags">
+      <div class="post-author">作者: 祁维国</div>
+      <div class="post-date">2020-02-23 18:54:41</div>
+    </div>
+    <div class="article-box">
+      <h1 id="css3中的filter滤镜使用"><a href="#css3中的filter滤镜使用" class="headerlink" title="css3中的filter滤镜使用"></a>css3中的filter滤镜使用</h1><blockquote>
+<p><code>filter</code> 滤镜，借鉴了Photoshop的滤镜效果，在ps中主要用来设置图层图片的模糊，颜色的高亮，对比度等效果，在css中滤镜通常用于调整图像，背景和边框的渲染和效果。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>取值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grayscale</td>
+<td>值为0-1之间的小数, 或0%-100%百分数</td>
+<td>灰度</td>
+</tr>
+<tr>
+<td>sepia</td>
+<td>值为0-1之间的小数, 或0%-100%百分数</td>
+<td>褐色</td>
+</tr>
+<tr>
+<td>saturate</td>
+<td>值为num</td>
+<td>饱和度</td>
+</tr>
+<tr>
+<td>hue-rotate</td>
+<td>值为angle</td>
+<td>色相旋转</td>
+</tr>
+<tr>
+<td>invert</td>
+<td>反色</td>
+<td>值为0-1之间的小数</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>值为0-1之间的小数</td>
+<td>透明度</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>值为0-1之间的小数</td>
+<td>亮度</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>值为num</td>
+<td>对比度</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>值为length</td>
+<td>模糊</td>
+</tr>
+<tr>
+<td>drop-shadow</td>
+<td>和投影取值相同</td>
+<td>阴影</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<p><strong>兼容性：</strong></p>
+<p><img src="/2020/02/23/CSS3/filter/filter.png" alt="image"><br><a href="https://caniuse.com/#search=filter" rel="external nofollow noopener noreferrer" target="_blank">查看兼容性详情</a></p>
+<h2 id="1、grayscale-灰度模式"><a href="#1、grayscale-灰度模式" class="headerlink" title="1、grayscale 灰度模式"></a>1、grayscale 灰度模式</h2><blockquote>
+<p>用来设置图像或者元素的灰度模式，也就是去掉所有颜色以灰色显示元素</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter:grayscale(val)</code></p>
+<p><code>val</code> ：值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0，同时也可以去0-1之间小数；</p>
+<pre><code class="css">/* 100%灰度 */
+filter:grayscale(1);
+/* 50%灰度 */
+filter:grayscale(0.5);
+/* 0%灰度 */
+filter:grayscale(0);
+</code></pre>
+<p><strong>案例:</strong> <a href="https://codepen.io/qwguo88/pen/MWYQyqK" rel="external nofollow noopener noreferrer" target="_blank">Demo</a><br><strong>颜色灰度：</strong></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-color-grayscale" src="https://codepen.io/qwguo88/embed/MWYQyqK?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/MWYQyqK" rel="external nofollow noopener noreferrer" target="_blank">filter-color-grayscale</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe><br><strong>图片灰度：</strong><br><iframe height="500" style="width: 100%;" scrolling="no" title="filter-img-grayscale" src="https://codepen.io/qwguo88/embed/yLNVdBp?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/yLNVdBp" rel="external nofollow noopener noreferrer" target="_blank">filter-img-grayscale</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+
+<h2 id="2、sepia-褐色"><a href="#2、sepia-褐色" class="headerlink" title="2、sepia 褐色"></a>2、sepia 褐色</h2><blockquote>
+<p>将图片或者元素以褐色的形式显示，也就是复古效果。</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter:sepia(val)</code></p>
+<p><code>val</code> ：值定义转换的比例。值为100%则完全是深褐色的，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0，同时也可以去0-1之间小数；</p>
+<pre><code class="css">/* 0%深褐色 */
+filter:sepia(0);
+/* 10%深褐色 */
+filter:sepia(10%);
+/* 100%深褐色 */
+filter:sepia(100%);
+</code></pre>
+<p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/Jjdbzyg" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-sepia" src="https://codepen.io/qwguo88/embed/Jjdbzyg?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/Jjdbzyg" rel="external nofollow noopener noreferrer" target="_blank">filter-sepia</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+<h2 id="3、saturate-饱和度"><a href="#3、saturate-饱和度" class="headerlink" title="3、saturate 饱和度"></a>3、saturate 饱和度</h2><blockquote>
+<p>用于设置图像的饱和度。</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter: saturate(val)</code></p>
+<p><code>val</code> ：取值为0%则是完全不饱和，值为100%则图像无变化。其他值，则是效果的线性乘子。超过100%的值是允许的，则有更高的饱和度。 若值未设置，值默认是1，同时也可以去0-1之间小数。</p>
+<pre><code class="css">/* 0%深褐色 */
+filter:saturate(0);
+/* 10%深褐色 */
+filter:saturate(10%);
+/* 100%深褐色 */
+filter:saturate(100%);
+</code></pre>
+<p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/qBdqvPW" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-saturate" src="https://codepen.io/qwguo88/embed/qBdqvPW?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/qBdqvPW" rel="external nofollow noopener noreferrer" target="_blank">filter-saturate</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+
+<h3 id="4、hue-rotate-色相旋转"><a href="#4、hue-rotate-色相旋转" class="headerlink" title="4、hue-rotate 色相旋转"></a>4、hue-rotate 色相旋转</h3><blockquote>
+<p>给图像应用色相旋转。</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter: hue-rotate(angle)</code></p>
+<p><code>angle</code> ：用于设定图像被调整的色环角度值。值为0deg，则图像无变化。若值未设置，默认值是0deg。该值虽然没有最大值，超过360deg的值相当于又绕一圈。</p>
+<pre><code class="css">/* 无变化 */
+filter: hue-rotate(0deg);
+/* 色相旋转30度 */
+filter: hue-rotate(30deg);
+/* 色相旋转360度 */
+filter: hue-rotate(360deg);
+</code></pre>
+<p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/XWbNLmx" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-hue-rotate" src="https://codepen.io/qwguo88/embed/XWbNLmx?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/XWbNLmx" rel="external nofollow noopener noreferrer" target="_blank">filter-hue-rotate</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+
+<h3 id="5、invert-反色"><a href="#5、invert-反色" class="headerlink" title="5、invert 反色"></a>5、invert 反色</h3><blockquote>
+<p>给图片进行反转取色显示</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter: invert(val)</code></p>
+<p><code>val</code> ：取值为100%表示完全反转。值为0%则图像无变化。值在0%和100%之间。 若值未设置，值默认是0。，同时也可以去0-1之间小数。</p>
+<pre><code class="css">/* 无变化 */
+filter: invert(0);
+/* 取反30% */
+filter: invert(30%);
+/* or */
+filter: invert(.3);
+</code></pre>
+<p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/PoqbMWe" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-invert" src="https://codepen.io/qwguo88/embed/PoqbMWe?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/PoqbMWe" rel="external nofollow noopener noreferrer" target="_blank">filter-invert</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+<h3 id="6、opacity-透明度"><a href="#6、opacity-透明度" class="headerlink" title="6、opacity 透明度"></a>6、opacity 透明度</h3><blockquote>
+<p>给图像或者元素设置透明度，该函数与已有的opacity属性很相似，不同之处在于通过filter，一些浏览器为了提升性能会提供硬件加速。</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter: opacity(val)</code></p>
+<p><code>val</code> ： 取值为0%则是完全透明，值为100%则图像无变化。值在0%和100%之间。 若值未设置，值默认是1。</p>
+<pre><code class="css">/* 无变化 */
+filter: opacity(0);
+/* 透明度30% */
+filter: opacity(30%);
+/* or */
+filter: opacity(.3);
+</code></pre>
+<p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/MWwbNPa" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-opacity" src="https://codepen.io/qwguo88/embed/MWwbNPa?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/MWwbNPa" rel="external nofollow noopener noreferrer" target="_blank">filter-opacity</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+
+<h3 id="7、brightness-亮度"><a href="#7、brightness-亮度" class="headerlink" title="7、brightness 亮度"></a>7、brightness 亮度</h3><blockquote>
+<p>用于设置图像的亮度，给图片应用一种线性乘法，使其看起来更亮或更暗。</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter: brightness(val)</code></p>
+<p><code>val</code> ： 取值如果是0%，图像会全黑。取值是100%，则图像无变化。其他的值对应线性乘数效果。值超过100%也是可以的，图像会比原来更亮。如果没有设定值，默认是1。</p>
+<pre><code class="css">/* 无变化 */
+filter: brightness(0);
+/* 图像变暗70% */
+filter: brightness(30%);
+/* or */
+filter: brightness(.3);
+</code></pre>
+<p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/xxGRveL" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-brightness" src="https://codepen.io/qwguo88/embed/xxGRveL?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/xxGRveL" rel="external nofollow noopener noreferrer" target="_blank">filter-brightness</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+<h3 id="8、contrast-对比度"><a href="#8、contrast-对比度" class="headerlink" title="8、contrast 对比度"></a>8、contrast 对比度</h3><blockquote>
+<p>用于设置图像的对比度，</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter: contrast(val)</code></p>
+<p><code>val</code> ： 值是0%的话，图像会全灰。值是100%，图像不变。值可以超过100%，意味着会运用更低的对比。若没有设置值，默认是1。</p>
+<pre><code class="css">/* 无变化 */
+filter: contrast(0);
+/* 图像对比度变暗70% */
+filter: contrast(30%);
+/* or */
+filter: contrast(.3);
+</code></pre>
+<p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/OJVbKKG" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-contrast" src="https://codepen.io/qwguo88/embed/OJVbKKG?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/OJVbKKG" rel="external nofollow noopener noreferrer" target="_blank">filter-contrast</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+
+<h3 id="9、blur-模糊度"><a href="#9、blur-模糊度" class="headerlink" title="9、blur 模糊度"></a>9、blur 模糊度</h3><blockquote>
+<p>用于设置图像的高斯模糊度</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter: blur(radius)</code></p>
+<p><code>radius</code> ：设定高斯函数的标准差，或者是屏幕上以多少像素融在一起，所以值越大越模糊；如果没有设定值，则默认是0；这个参数可设置css长度值（em、px、rem、pt）等，但不接受百分比值。</p>
+<pre><code class="css">/* 无变化 */
+filter: blur(0);
+/* 设置图像高斯模糊2个像素融合 */
+filter: blur(2px);
+/* 设置图像高斯模糊5个像素融合 */
+filter: blur(5px);
+</code></pre>
+<p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/OJVbKKG" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-contrast" src="https://codepen.io/qwguo88/embed/OJVbKKG?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/OJVbKKG" rel="external nofollow noopener noreferrer" target="_blank">filter-contrast</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
+
+
+<h3 id="10、drop-shadow-投影"><a href="#10、drop-shadow-投影" class="headerlink" title="10、drop-shadow 投影"></a>10、drop-shadow 投影</h3><blockquote>
+<p>设置图像或元素的投影效果，他和box-shadow效果一样</p>
+</blockquote>
+<p><strong>基本语法：</strong> <code>filter: drop-shadow()</code></p>
+
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+    
+      <div class="page-sidebar">
+    
+        <div class="author-box">
+  
+  <div class="portrait"><img src="/image/author.jpg" alt=""></div>
+  <ul>
+    <li class="author-name">祁维国</li>
+    <li class="author-intro">一台电脑，一根网线，能够窄到天昏地暗</li>
+    <li class="author-icon">
+      
+        <a href="javascript:weixin();" title="weixin" class="icon-weixin"></a>
+      
+      
+        <a target="_blank" href="75624839" title="QQ" class="icon-QQ"></a>
+      
+      
+        <a target="_blank" href="http://www.weibo.com" title="weibo" class="icon-weibo" rel="external nofollow noopener noreferrer"></a>
+      
+      
+        <a target="_blank" href="https://www.douban.com/people/wuchong1014" title="douban" class="icon-douban" rel="external nofollow noopener noreferrer"></a>
+      
+      
+        <a target="_blank" href="http://www.zhihu.com/people/jark" title="zhihu" class="icon-zhihu" rel="external nofollow noopener noreferrer"></a>
+      
+      
+        <a target="_blank" href="75624839@qq.com" title="email" class="icon-email"></a>
+      
+      
+        <a target="_blank" href="https://twitter.com/qwguo" title="twitter" class="icon-twitter" rel="external nofollow noopener noreferrer"></a>
+      
+      
+        <a target="_blank" href="https://github.com/qwguo" title="github" class="icon-github" rel="external nofollow noopener noreferrer"></a>
+      
+      
+        <a target="_blank" href="https://facebook.com/qwguo" title="facebook" class="icon-facebook" rel="external nofollow noopener noreferrer"></a>
+      
+      
+        <a target="_blank" href="https://www.linkedin.com/in/qwguo" title="linkedin" class="icon-linkedin" rel="external nofollow noopener noreferrer"></a>
+      
+      
+        <a target="_blank" href="http://stackoverflow.com/users/3222790/jark" title="stack overflow" class="icon-stack-overflow" rel="external nofollow noopener noreferrer"></a>
+      
+    </li>
+  </ul>
+</div>
+<script>
+  function weixin(){
+    console.log(123);
+  }
+</script>
+
+    
+        
+  <div class="widget-wrap tags-widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+        
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+        
+  <div class="widget-wrap archive-widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">2020-02-23</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019-12-21</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019-12-17</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019-12-16</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019-12-13</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">2019-07-20</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">2019-02-14</a></li></ul>
+    </div>
+  </div>
+
+
+    
+        
+  <div class="widget-wrap recent-posts-widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/23/CSS3/filter/">css3中的filter滤镜使用</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/23/codeText/">codeText</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/21/CSS3/transition/">css3中用来设置元素的过度效果属性：transition</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/17/CSS3/cssEvents/">在css3中有两个控制js事件行为的属性</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/16/CSS3/flex/">flex布局</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+        
+  <div class="widget-wrap tagcloud">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget">
+      <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a>
+    </div>
+  </div>
+
+    
+</div>
+
+
+    
+  </div>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+<!-- <script src="/lib/highlight/highlight.pack.js"></script> -->
+<script src="/lib/codemirror/codemirror.js"></script>
+<script src="/lib/codemirror/overlay.js"></script>
+<script src="/lib/codemirror/clike.js"></script>
+<script src="/lib/codemirror/javascript.js"></script>
+<script src="/lib/codemirror/css.js"></script>
+<script src="/lib/codemirror/xml.js"></script>
+<script src="/lib/codemirror/htmlmixed.js"></script>
+<script src="/lib/codemirror/php.js"></script>
+<script src="/lib/codemirror/coffeescript.js"></script>
+<script src="/lib/codemirror/pug.js"></script>
+<script src="/lib/codemirror/sass.js"></script>
+<script src="/lib/codemirror/vue.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
