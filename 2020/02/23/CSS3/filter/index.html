@@ -10,6 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
   <title>css3中的filter滤镜使用</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1576021_nacnkws91g9.css">
   <link rel="stylesheet" href="/css/style.css">
   <!-- <link rel="stylesheet" href="/lib/highlight/gruvbox-dark.css"> -->
   <link rel="stylesheet" href="/lib/codemirror/codemirror.css">
@@ -22,6 +23,19 @@
     <div class="page-container">
       <div class="page-content">
         <div class="article-main">
+  <a class="iconfont icon-home" href="/"></a>
+  <span class="article-doc-switch" id="docSwitch">
+    
+    <i></i>
+    
+    <i></i>
+    
+    <i></i>
+    
+  </span>
+  <div class="article-doc" id="docBox">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css3中的filter滤镜使用"><span class="toc-number">1.</span> <span class="toc-text">css3中的filter滤镜使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、grayscale-灰度模式"><span class="toc-number">1.1.</span> <span class="toc-text">1、grayscale 灰度模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、sepia-褐色"><span class="toc-number">1.2.</span> <span class="toc-text">2、sepia 褐色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、saturate-饱和度"><span class="toc-number">1.3.</span> <span class="toc-text">3、saturate 饱和度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、hue-rotate-色相旋转"><span class="toc-number">1.4.</span> <span class="toc-text">4、hue-rotate 色相旋转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、invert-反色"><span class="toc-number">1.5.</span> <span class="toc-text">5、invert 反色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、opacity-透明度"><span class="toc-number">1.6.</span> <span class="toc-text">6、opacity 透明度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、brightness-亮度"><span class="toc-number">1.7.</span> <span class="toc-text">7、brightness 亮度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、contrast-对比度"><span class="toc-number">1.8.</span> <span class="toc-text">8、contrast 对比度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9、blur-模糊度"><span class="toc-number">1.9.</span> <span class="toc-text">9、blur 模糊度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10、drop-shadow-投影"><span class="toc-number">1.10.</span> <span class="toc-text">10、drop-shadow 投影</span></a></li></ol></li></ol>
+  </div>
   <div class="article-box">
     <div class="article-tags">
       <div class="post-author">作者: 祁维国</div>
@@ -142,7 +156,7 @@ filter:saturate(100%);
 <iframe height="500" style="width: 100%;" scrolling="no" title="filter-saturate" src="https://codepen.io/qwguo88/embed/qBdqvPW?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/qBdqvPW" rel="external nofollow noopener noreferrer" target="_blank">filter-saturate</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
 
 
-<h3 id="4、hue-rotate-色相旋转"><a href="#4、hue-rotate-色相旋转" class="headerlink" title="4、hue-rotate 色相旋转"></a>4、hue-rotate 色相旋转</h3><blockquote>
+<h2 id="4、hue-rotate-色相旋转"><a href="#4、hue-rotate-色相旋转" class="headerlink" title="4、hue-rotate 色相旋转"></a>4、hue-rotate 色相旋转</h2><blockquote>
 <p>给图像应用色相旋转。</p>
 </blockquote>
 <p><strong>基本语法：</strong> <code>filter: hue-rotate(angle)</code></p>
@@ -158,7 +172,7 @@ filter: hue-rotate(360deg);
 <iframe height="500" style="width: 100%;" scrolling="no" title="filter-hue-rotate" src="https://codepen.io/qwguo88/embed/XWbNLmx?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/XWbNLmx" rel="external nofollow noopener noreferrer" target="_blank">filter-hue-rotate</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
 
 
-<h3 id="5、invert-反色"><a href="#5、invert-反色" class="headerlink" title="5、invert 反色"></a>5、invert 反色</h3><blockquote>
+<h2 id="5、invert-反色"><a href="#5、invert-反色" class="headerlink" title="5、invert 反色"></a>5、invert 反色</h2><blockquote>
 <p>给图片进行反转取色显示</p>
 </blockquote>
 <p><strong>基本语法：</strong> <code>filter: invert(val)</code></p>
@@ -173,7 +187,7 @@ filter: invert(.3);
 <p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/PoqbMWe" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
 <iframe height="500" style="width: 100%;" scrolling="no" title="filter-invert" src="https://codepen.io/qwguo88/embed/PoqbMWe?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/PoqbMWe" rel="external nofollow noopener noreferrer" target="_blank">filter-invert</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
 
-<h3 id="6、opacity-透明度"><a href="#6、opacity-透明度" class="headerlink" title="6、opacity 透明度"></a>6、opacity 透明度</h3><blockquote>
+<h2 id="6、opacity-透明度"><a href="#6、opacity-透明度" class="headerlink" title="6、opacity 透明度"></a>6、opacity 透明度</h2><blockquote>
 <p>给图像或者元素设置透明度，该函数与已有的opacity属性很相似，不同之处在于通过filter，一些浏览器为了提升性能会提供硬件加速。</p>
 </blockquote>
 <p><strong>基本语法：</strong> <code>filter: opacity(val)</code></p>
@@ -189,7 +203,7 @@ filter: opacity(.3);
 <iframe height="500" style="width: 100%;" scrolling="no" title="filter-opacity" src="https://codepen.io/qwguo88/embed/MWwbNPa?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/MWwbNPa" rel="external nofollow noopener noreferrer" target="_blank">filter-opacity</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
 
 
-<h3 id="7、brightness-亮度"><a href="#7、brightness-亮度" class="headerlink" title="7、brightness 亮度"></a>7、brightness 亮度</h3><blockquote>
+<h2 id="7、brightness-亮度"><a href="#7、brightness-亮度" class="headerlink" title="7、brightness 亮度"></a>7、brightness 亮度</h2><blockquote>
 <p>用于设置图像的亮度，给图片应用一种线性乘法，使其看起来更亮或更暗。</p>
 </blockquote>
 <p><strong>基本语法：</strong> <code>filter: brightness(val)</code></p>
@@ -204,7 +218,7 @@ filter: brightness(.3);
 <p><strong>案例：</strong> <a href="https://codepen.io/qwguo88/pen/xxGRveL" rel="external nofollow noopener noreferrer" target="_blank">Demo</a></p>
 <iframe height="500" style="width: 100%;" scrolling="no" title="filter-brightness" src="https://codepen.io/qwguo88/embed/xxGRveL?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/xxGRveL" rel="external nofollow noopener noreferrer" target="_blank">filter-brightness</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
 
-<h3 id="8、contrast-对比度"><a href="#8、contrast-对比度" class="headerlink" title="8、contrast 对比度"></a>8、contrast 对比度</h3><blockquote>
+<h2 id="8、contrast-对比度"><a href="#8、contrast-对比度" class="headerlink" title="8、contrast 对比度"></a>8、contrast 对比度</h2><blockquote>
 <p>用于设置图像的对比度，</p>
 </blockquote>
 <p><strong>基本语法：</strong> <code>filter: contrast(val)</code></p>
@@ -220,7 +234,7 @@ filter: contrast(.3);
 <iframe height="500" style="width: 100%;" scrolling="no" title="filter-contrast" src="https://codepen.io/qwguo88/embed/OJVbKKG?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/OJVbKKG" rel="external nofollow noopener noreferrer" target="_blank">filter-contrast</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
 
 
-<h3 id="9、blur-模糊度"><a href="#9、blur-模糊度" class="headerlink" title="9、blur 模糊度"></a>9、blur 模糊度</h3><blockquote>
+<h2 id="9、blur-模糊度"><a href="#9、blur-模糊度" class="headerlink" title="9、blur 模糊度"></a>9、blur 模糊度</h2><blockquote>
 <p>用于设置图像的高斯模糊度</p>
 </blockquote>
 <p><strong>基本语法：</strong> <code>filter: blur(radius)</code></p>
@@ -236,7 +250,7 @@ filter: blur(5px);
 <iframe height="500" style="width: 100%;" scrolling="no" title="filter-contrast" src="https://codepen.io/qwguo88/embed/OJVbKKG?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>  See the Pen <a href="https://codepen.io/qwguo88/pen/OJVbKKG" rel="external nofollow noopener noreferrer" target="_blank">filter-contrast</a> by qwguo<br>  (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe>
 
 
-<h3 id="10、drop-shadow-投影"><a href="#10、drop-shadow-投影" class="headerlink" title="10、drop-shadow 投影"></a>10、drop-shadow 投影</h3><blockquote>
+<h2 id="10、drop-shadow-投影"><a href="#10、drop-shadow-投影" class="headerlink" title="10、drop-shadow 投影"></a>10、drop-shadow 投影</h2><blockquote>
 <p>设置图像或元素的投影效果，他和box-shadow效果一样</p>
 </blockquote>
 <p><strong>基本语法：</strong> <code>filter: drop-shadow()</code></p>
@@ -244,6 +258,9 @@ filter: blur(5px);
     </div>
   </div>
 </div>
+
+
+
 
       </div>
     </div>
@@ -262,14 +279,14 @@ filter: blur(5px);
       
       
       
-        <a target="_blank" href="https://www.zhihu.com/people/qwguo" title="zhihu" class="icon-zhihu" rel="external nofollow noopener noreferrer"></a>
+        <a target="_blank" href="https://www.zhihu.com/people/qwguo" title="zhihu" class="iconfont icon-zhihu" rel="external nofollow noopener noreferrer"></a>
       
       
-        <a href="mailto:75624839@qq.com" title="75624839@qq.com" class="icon-email" rel="external nofollow noopener noreferrer" target="_blank"></a>
+        <a href="mailto:75624839@qq.com" title="75624839@qq.com" class="iconfont icon-email" rel="external nofollow noopener noreferrer" target="_blank"></a>
       
       
       
-        <a target="_blank" href="https://github.com/qwguo" title="github" class="icon-github" rel="external nofollow noopener noreferrer"></a>
+        <a target="_blank" href="https://github.com/qwguo" title="github" class="iconfont icon-github" rel="external nofollow noopener noreferrer"></a>
       
       
       
@@ -286,9 +303,10 @@ filter: blur(5px);
     
         
   <div class="widget-wrap tags-widget">
+
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -298,7 +316,7 @@ filter: blur(5px);
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li></ul>
     </div>
   </div>
 
@@ -350,7 +368,7 @@ filter: blur(5px);
   <div class="widget-wrap tagcloud">
     <h3 class="widget-title">标签云</h3>
     <div class="widget">
-      <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a>
     </div>
   </div>
 
@@ -360,8 +378,11 @@ filter: blur(5px);
 
     
   </div>
-  <script src="/js/jquery-3.4.1.min.js"></script>
-<!-- <script src="/lib/highlight/highlight.pack.js"></script> -->
+  <div id="backTopBtn">
+  <span><b>20%</b><em>TOP</em></span>
+  <i></i>
+
+<script src="/js/jquery-3.4.1.min.js"></script>
 <script src="/lib/codemirror/codemirror.js"></script>
 <script src="/lib/codemirror/overlay.js"></script>
 <script src="/lib/codemirror/clike.js"></script>
@@ -376,5 +397,5 @@ filter: blur(5px);
 <script src="/lib/codemirror/vue.js"></script>
 <script src="/js/main.js"></script>
 
-</body>
+</div></body>
 </html>

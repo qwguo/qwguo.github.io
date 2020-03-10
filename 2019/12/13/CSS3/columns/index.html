@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   
   <meta name="keywords" content="前端开发笔记">
-  <meta name="description" content="记录工作学习中的知识点">
+  <meta name="description" content="CSS3中实现多列布局，可以让文本多列显示">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
   <title>columns多列属性</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1576021_nacnkws91g9.css">
   <link rel="stylesheet" href="/css/style.css">
   <!-- <link rel="stylesheet" href="/lib/highlight/gruvbox-dark.css"> -->
   <link rel="stylesheet" href="/lib/codemirror/codemirror.css">
@@ -22,18 +23,31 @@
     <div class="page-container">
       <div class="page-content">
         <div class="article-main">
+  <a class="iconfont icon-home" href="/"></a>
+  <span class="article-doc-switch" id="docSwitch">
+    
+    <i></i>
+    
+    <i></i>
+    
+    <i></i>
+    
+  </span>
+  <div class="article-doc" id="docBox">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#columns样式属性使用"><span class="toc-number">1.</span> <span class="toc-text">columns样式属性使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#column-width样式属性使用"><span class="toc-number">1.0.1.</span> <span class="toc-text">column-width样式属性使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#column-count样式属性使用"><span class="toc-number">1.0.2.</span> <span class="toc-text">column-count样式属性使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#column-gap样式属性使用"><span class="toc-number">1.1.</span> <span class="toc-text">column-gap样式属性使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#column-span样式属性使用"><span class="toc-number">1.2.</span> <span class="toc-text">column-span样式属性使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#column-rule样式属性使用"><span class="toc-number">1.3.</span> <span class="toc-text">column-rule样式属性使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#column-fill样式属性使用"><span class="toc-number">1.4.</span> <span class="toc-text">column-fill样式属性使用</span></a></li></ol>
+  </div>
   <div class="article-box">
     <div class="article-tags">
       <div class="post-author">作者: 祁维国</div>
       <div class="post-date">2019-12-13 16:02:03</div>
     </div>
     <div class="article-box">
-      <h2 id="columns样式属性使用"><a href="#columns样式属性使用" class="headerlink" title="columns样式属性使用"></a>columns样式属性使用</h2><blockquote>
+      <h1 id="columns样式属性使用"><a href="#columns样式属性使用" class="headerlink" title="columns样式属性使用"></a>columns样式属性使用</h1><blockquote>
 <p><code>columns</code>：用于设置元素的列宽和列数。它是<code>column-width</code>和<code>column-count</code>的简写属性。</p>
 </blockquote>
 <p><strong>语法：</strong><br> <code>columns: &lt;&#39;column-width&#39;&gt; || &lt;&#39;column-count&#39;&gt;;</code></p>
 <ul>
-<li><code>column-width</code>：用来设置列宽，取值<code>auto</code>和<code>像素值</code>，实际宽度可能会更宽或更窄以适合可用空间。</li>
+<li><code>column-width1</code>：用来设置列宽，取值<code>auto</code>和<code>像素值</code>，实际宽度可能会更宽或更窄以适合可用空间。</li>
 <li><code>column-count</code>：用来设置元素内容被划分成几列，取值<code>auto</code>和<code>正整数</code>。如果取值和列的宽度都非<code>auto</code> ，则它仅指示允许的最大列数。</li>
 </ul>
 <a id="more"></a>
@@ -151,6 +165,9 @@
   </div>
 </div>
 
+
+
+
       </div>
     </div>
     
@@ -168,14 +185,14 @@
       
       
       
-        <a target="_blank" href="https://www.zhihu.com/people/qwguo" title="zhihu" class="icon-zhihu" rel="external nofollow noopener noreferrer"></a>
+        <a target="_blank" href="https://www.zhihu.com/people/qwguo" title="zhihu" class="iconfont icon-zhihu" rel="external nofollow noopener noreferrer"></a>
       
       
-        <a href="mailto:75624839@qq.com" title="75624839@qq.com" class="icon-email" rel="external nofollow noopener noreferrer" target="_blank"></a>
+        <a href="mailto:75624839@qq.com" title="75624839@qq.com" class="iconfont icon-email" rel="external nofollow noopener noreferrer" target="_blank"></a>
       
       
       
-        <a target="_blank" href="https://github.com/qwguo" title="github" class="icon-github" rel="external nofollow noopener noreferrer"></a>
+        <a target="_blank" href="https://github.com/qwguo" title="github" class="iconfont icon-github" rel="external nofollow noopener noreferrer"></a>
       
       
       
@@ -192,9 +209,10 @@
     
         
   <div class="widget-wrap tags-widget">
+
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -204,7 +222,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li></ul>
     </div>
   </div>
 
@@ -256,7 +274,7 @@
   <div class="widget-wrap tagcloud">
     <h3 class="widget-title">标签云</h3>
     <div class="widget">
-      <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a>
     </div>
   </div>
 
@@ -266,8 +284,11 @@
 
     
   </div>
-  <script src="/js/jquery-3.4.1.min.js"></script>
-<!-- <script src="/lib/highlight/highlight.pack.js"></script> -->
+  <div id="backTopBtn">
+  <span><b>20%</b><em>TOP</em></span>
+  <i></i>
+
+<script src="/js/jquery-3.4.1.min.js"></script>
 <script src="/lib/codemirror/codemirror.js"></script>
 <script src="/lib/codemirror/overlay.js"></script>
 <script src="/lib/codemirror/clike.js"></script>
@@ -282,5 +303,5 @@
 <script src="/lib/codemirror/vue.js"></script>
 <script src="/js/main.js"></script>
 
-</body>
+</div></body>
 </html>

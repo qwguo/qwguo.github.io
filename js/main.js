@@ -79,8 +79,13 @@ function randomNum(minNum,maxNum){
     i++;
   }
 }());
+
 $(function(){
-  // hljs.initHighlightingOnLoad();
+  let HTMLDom = $(document),
+    winDom = $(window),
+    HTMLDomH =  HTMLDom.height(),
+    winDomH = winDom.height();
+  // 首页文章列表鼠标经过动画效果
   let indexMain = $('#indexMain'),
     animArray = ['anim-surround', 'anim-halo-effect-out', 'anim-halo-effect-in', 'anim-swipe-left', 'anim-swipe-right', 'anim-swipe-down', 'anim-swipe-up'],
     getAnimName = null;
@@ -95,4 +100,46 @@ $(function(){
       $this.removeClass(getAnimName);
     }
   }, '.post-item');
+  // 文章目录显示隐藏
+  $('#docSwitch').on('click', function(){
+    let $this = $(this),
+      docBox = $('#docBox');
+    if(!$this.hasClass('open')){
+      $this.addClass('open');
+      docBox.addClass('open');
+    }else{
+      $this.removeClass('open');
+      docBox.removeClass('open');
+    }
+
+  });
+
+  // 页面滚动百分百计算效果
+  (function(){
+    let backTopBtn = $('#backTopBtn'),
+      i = backTopBtn.find('i'),
+      b = backTopBtn.find('b'),
+      fun = function(sTop){
+        if((HTMLDomH - winDomH) > 0 && sTop > 0){
+          backTopBtn.addClass('show');
+          let he = (sTop/(HTMLDomH - winDomH)*100).toFixed(0)
+          b.text(he + '%');
+          i.height(he + '%');
+        }else{
+          backTopBtn.removeClass('show');
+        }
+      };
+    HTMLDom.on('scroll', function(event){
+      fun(HTMLDom.scrollTop())
+    });
+    backTopBtn.on('click', function(){
+      HTMLDom.scrollTop(0);
+    });
+    fun(HTMLDom.scrollTop());
+    winDom.on('resize', function(){
+      HTMLDomH =  HTMLDom.height();
+      winDomH = winDom.height();
+      fun(HTMLDom.scrollTop());
+    })
+  }());
 });
