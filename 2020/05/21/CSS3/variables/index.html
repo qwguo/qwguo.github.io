@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="keywords" content="前端开发笔记,CSS,CSS3,js,javascript,jQuery,html,html5"><meta name="description" content="个人博客，记录工作学习中的知识点，前端技术知识分享博客"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="icon" href="/image/favicon.ico"><link rel="apple-touch-icon" href="/image/favicon.png"><link rel="apple-touch-icon-precomposed" href="/image/favicon.png"><title>css3中的变量</title><link rel="stylesheet" href="//at.alicdn.com/t/font_1576021_mw6z5j7gpwm.css"><link rel="stylesheet" href="//aimg8.oss-cn-shanghai.aliyuncs.com/plugins/EvyunUi/css/popup.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.52.2/codemirror.min.css"><link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.52.2/theme/dracula.min.css"></head></html><body><div class="q page page-left"><div class="page-container"><div class="page-content"><div class="article-main"><a class="iconfont icon-home" href="/"></a><span class="article-doc-switch" id="docSwitch"><i></i><i></i><i></i></span><div class="article-doc" id="docBox"><span class="close-doc" id="closeDoc"></span><h3>目录</h3><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS3新功能之变量：variables"><span class="toc-number">1.</span> <span class="toc-text">CSS3新功能之变量：variables</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量声明"><span class="toc-number">1.1.</span> <span class="toc-text">变量声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量使用"><span class="toc-number">1.2.</span> <span class="toc-text">变量使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量的作用域"><span class="toc-number">1.3.</span> <span class="toc-text">变量的作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量的优先级"><span class="toc-number">1.4.</span> <span class="toc-text">变量的优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript中操作变量"><span class="toc-number">1.5.</span> <span class="toc-text">javascript中操作变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测浏览器支持情况"><span class="toc-number">1.6.</span> <span class="toc-text">检测浏览器支持情况</span></a></li></ol></li></ol></div><div class="article-tags"><div class="post-author">作者: 祁维国</div><ul class="post-prop"><li><i class="iconfont icon-date"></i> 发布时间<b>2020-05-21, 星期四</b></li><li><a href="/categories/CSS/"><i class="iconfont icon-file"></i> 分类<b>CSS</b></a></li><li><i class="iconfont icon-fontSum"></i> 大约<b>1.3k</b>个字数</li><li><i class="iconfont icon-time"></i> 预计阅读<b>5分钟</b></li></ul></div><div class="article-box"><h1 id="CSS3新功能之变量：variables"><a href="#CSS3新功能之变量：variables" class="headerlink" title="CSS3新功能之变量：variables"></a>CSS3新功能之变量：variables</h1><blockquote><p>css3为我们提供了一个强大的功能自定义属性，也就是变量，他能让我们更改色系、皮肤、自适配变得简单。我们只需要更改一些我们事先定义好的变量就可以轻松实现各种效果。特别是我们在开发大型项目的时候有多处使用相同的值来表示，这个时候我们就可以吧相同的属性值抽离出来定义成变量方便我们后期统一修改</p></blockquote><h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><pre><code class="css">/* 定义全局变量 */
+:root{
+  --navColor: #c00;
+  --navPadding: 10px;
+}
+
+/* 定义局部变量 */
+selector{
+  --nameFont: italic small-caps 400 12px / 20px &#39;微软雅黑&#39;;
+  --boxBorder: 2px solid rgba(0, 0, 0, .2);
+}
+/* 使用var函数定义变量 */
+selector{
+  --borderWidth: 8px;
+  --borderColor: red;
+  --borderStyle: solid;
+  --border: var(--borderWidth) var(--borderColor) var(--borderStyle);
+  border: var(--border);
+}
+</code></pre><p>从上面可以看出在css中定义变量和声明一条css规则差不多只是前边使用<code>--</code>两个中横线后边跟着变量名。上面的代码<code>:root</code>中定义的变量为全局变量可以在任何元素中使用；<code>selector</code>中定义的变量为局部变量，只能在选择器范围内，和他的子元素中使用。</p><p><strong>需要注意：</strong></p><ol><li>css中的变量名是区分大小写的<code>--navColor</code>和<code>--navcolor</code>是两个不同的变量;</li><li>定义变量的时候<code>:</code>号和<code>;</code>中间是一个整体，整体是变量的值;</li><li>变量值也就是css的规则值，任何规则值都可以存入变量，并且变量值不用加引号;</li></ol><p><strong>兼容性：</strong><br><img src="/2020/05/21/CSS3/variables/custom-variables-caniuse.png" alt="image"></p><p><a href="https://caniuse.com/#search=--" rel="external nofollow noopener noreferrer" target="_blank">查看兼容详情</a></p><h2 id="变量使用"><a href="#变量使用" class="headerlink" title="变量使用"></a>变量使用</h2><blockquote><p>要想使用上边我们定义的变量，就要用到<code>var()</code>函数</p></blockquote><p><strong>语法：</strong></p><pre><code class="css">  var( &lt;custom-variable-name&gt; , &lt;declaration-value&gt;? )
+</code></pre><p><strong>参数说明：</strong></p><ol><li><code>custom-variable-name</code>：必填，表示我们定义的变量名；</li><li><code>declaration-value</code>：可选，后补值，当自定义变量值不存在的情况下将使用这个值，他会将把自定义变量名后边的所有参数看成一个整体，所以这个值可以包含逗号<code>,</code>、空格<code></code>、括号<code>()</code>等css有效的规则值，他不能使用自定义变量名，不能有回车换行，不能有<code>;</code>。</li></ol><p><strong>实例：</strong></p><pre><code class="css">.nav{
+  color: var(--navColor);
+  padding: var(--navPadding);
+}
+selector{
+  font: var(--nameFont, normal 700 16px/ 30px &#39;黑体&#39;);
+  border: var(--boxBorder, 1px solid #c00);
+}
+</code></pre><p><strong>兼容性：</strong><br><img src="/2020/05/21/CSS3/variables/var-caniuse.png" alt="image"></p><p><a href="https://caniuse.com/#search=css%20var" rel="external nofollow noopener noreferrer" target="_blank">查看兼容详情</a></p><h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote><p>上面我们提到过css的变量是有它的作用域的，在全局和布局同时定义了一个变量，会优先应用局部作用域。</p></blockquote><p><strong>代码说明：</strong></p><pre><code class="html">&lt;div class=&quot;div-1&quot;&gt;这里显示绿色文字&lt;/div&gt;
+&lt;div class=&quot;div-2&quot;&gt;这里显示红色文字&lt;/div&gt;
+&lt;div class=&quot;div-3&quot; style=&quot;--fontColor:blue;&quot;&gt;这里显示蓝色文字&lt;/div&gt;
+&lt;style&gt;
+:root{
+  --fontColor: red;
+}
+.div-1{
+  --fontColor: green;
+  /* 这里将应用绿色的文字样式，也就是自己定义的局部变量 */
+  color: var(--fontColor);
+}
+.div-2{
+  /* 这里将应用红色的文字样式，也就是根目录的变量 */
+  color: var(--fontColor);
+}
+.div-3{
+  /* 这里将应用蓝色的文字样式，也就是元素中style行内定义的变量 */
+  color: var(--fontColor);
+}
+&lt;/style&gt;
+</code></pre><h2 id="变量的优先级"><a href="#变量的优先级" class="headerlink" title="变量的优先级"></a>变量的优先级</h2><blockquote><p>css中应用变量时的优先级和css定义用选择器定义属性优先级差不多</p></blockquote><p><strong>代码说明：</strong></p><pre><code class="html">&lt;div class=&quot;box-1&quot; id=&quot;box&quot;&gt;
+  &lt;span class=&quot;span&quot;&gt;这里显示绿色文字&lt;span&gt;
+&lt;/div&gt;
+&lt;style&gt;
+:root{
+  --bgColor: red;
+}
+#box{
+  --bgColor: blue;
+}
+.box-1{
+  --bgColor: green;
+}
+.span{
+  --bgColor: purple;
+}
+.box-1{
+  /* 这里将应用蓝色的背景样式，也就是通过id定义的变量 */
+  background-color: var(--bgColor);
+}
+.span{
+  /* 这里将应用自色的背景样式，也就是通过自己class名定义的变量 */
+  background-color: var(--bgColor);
+}
+&lt;/style&gt;
+</code></pre><p>从上边代码可以看出，css获取变量和css的样式优先级一样，顺序是：<code>!important</code> &gt; <code>style=&quot;&quot;</code> &gt; <code>#id</code> &gt; <code>.class</code> &gt; <code>tagName</code> &gt; <code>:root</code>; 但是需要注意的是这里的<code>span</code>是先找自己定义作用域下的变量，如果没有才找父级作用域的变量，上边代码<code>span</code>自身定义的有变量，所以背景就是紫色。</p><p><strong>案例演示：</strong><a href="https://codepen.io/qwguo88/full/eYpXGGQ" rel="external nofollow noopener noreferrer" target="_blank">https://codepen.io/qwguo88/full/eYpXGGQ</a></p><iframe height="500" style="width:100%" scrolling="no" title="css-variables" src="https://codepen.io/qwguo88/embed/eYpXGGQ?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br> See the Pen <a href="https://codepen.io/qwguo88/pen/eYpXGGQ" rel="external nofollow noopener noreferrer" target="_blank">css-variables</a> by qwguo<br> (<a href="https://codepen.io/qwguo88" rel="external nofollow noopener noreferrer" target="_blank">@qwguo88</a>) on <a href="https://codepen.io" rel="external nofollow noopener noreferrer" target="_blank">CodePen</a>.<br></iframe><h2 id="javascript中操作变量"><a href="#javascript中操作变量" class="headerlink" title="javascript中操作变量"></a>javascript中操作变量</h2><blockquote><p>css3中的变量我们也可以使用javascript来获取和操作它</p></blockquote><pre><code class="javascript">// 获取行内样式的变量名
+element.style.getPropertyValue(&quot;--variableName&quot;);
+
+// 获取样式表里定义的变量
+getComputedStyle(element).getPropertyValue(&quot;--variableName&quot;);
+
+// 设置变量的值
+element.style.setProperty(&quot;--variableName&quot;, value);
+</code></pre><h2 id="检测浏览器支持情况"><a href="#检测浏览器支持情况" class="headerlink" title="检测浏览器支持情况"></a>检测浏览器支持情况</h2><blockquote><p>我们可以通过css语法和javascript语法来检测浏览器是否支持css变量</p></blockquote><p>css通过<code>@supports</code>性能查询语法来检测</p><p><strong>语法：</strong></p><pre><code class="css">@supports (--a: 0){
+  .box{
+    background-color:#c00;
+  }
+}
+@supports(not(--a: 0)){
+  .box{
+    background-color:#cc0;
+  }
+}
+</code></pre><p><strong>js语法检测：</strong></p><pre><code class="javascript">const isSupported = window.CSS &amp;&amp; window.CSS.supports &amp;&amp; window.CSS.supports(&#39;--a&#39;, 0);
+
+if (isSupported) {
+  /* supported */
+} else {
+  /* not supported */
+}
+</code></pre><p><strong>参考链接：</strong></p><ol><li>阮一峰老师：<a href="http://www.ruanyifeng.com/blog/2017/05/css-variables.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.ruanyifeng.com/blog/2017/05/css-variables.html</a></li><li>google developers： <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" rel="external nofollow noopener noreferrer" target="_blank">https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care</a></li><li>MDN：<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" rel="external nofollow noopener noreferrer" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties</a></li></ol></div></div></div></div><div class="page-sidebar"><div class="author-box"><div class="portrait"> <a href="http://qwguo.gitee.io/resume/" target="_blank" title="查看我" rel="external nofollow noopener noreferrer"><img src="/image/author.jpg" alt=""></a></div><ul><li class="author-name">祁维国</li><li class="author-intro">一台电脑，一根网线，能够宅到天昏地暗</li><li class="author-icon"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=75624839&site=qq&menu=yes" title="QQ" class="iconfont icon-QQ" rel="external nofollow noopener noreferrer"></a><a target="_blank" href="https://www.zhihu.com/people/qwguo" title="zhihu" class="iconfont icon-zhihu" rel="external nofollow noopener noreferrer"></a><a href="mailto:75624839@qq.com" title="75624839@qq.com" class="iconfont icon-email" rel="external nofollow noopener noreferrer" target="_blank"></a><a target="_blank" href="https://gitee.com/qwguo" title="码云" class="iconfont icon-gitee" rel="external nofollow noopener noreferrer"></a><a target="_blank" href="https://github.com/qwguo" title="github" class="iconfont icon-github" rel="external nofollow noopener noreferrer"></a></li></ul></div><div class="widget-wrap category-widget"><h3 class="widget-title"><i class="iconfont icon-file"></i> <span class="widget-title-name">分类</span></h3><div class="widget"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/CSS3/">CSS3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/plugins/">plugins</a></li></ul></li></ul></div></div><div class="widget-wrap archive-widget"><h3 class="widget-title"><i class="iconfont icon-date"></i> <a class="widget-title-name" href="/archives">归档</a></h3><div class="widget"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">2020-05</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">2020-04</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">2020-03</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">2020-02</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019-12</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">2019-07</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">2019-02</a></li></ul></div></div><div class="widget-wrap recent-posts-widget"><h3 class="widget-title"><i class="iconfont icon-post"></i> <span class="widget-title-name">最新文章</span></h3><div class="widget"><ul><li> <a href="/2020/05/21/CSS3/variables/">css3中的变量</a></li><li> <a href="/2020/05/12/CSS/textwrap/">关于css中文本的换行</a></li><li> <a href="/2020/04/29/CSS3/元素垂直居中的n种方法/">元素垂直居中的n种方法</a></li><li> <a href="/2020/04/22/JavaScript/console/">console控制台输出语法使用</a></li><li> <a href="/2020/04/16/CSS3/scrollbar/">通过css3的scrollbar功能自定义浏览器的滚动条效果</a></li></ul></div></div><div class="widget-wrap tags-cloud-widget"><h3 class="widget-title"><i class="iconfont icon-tags"></i> <a class="widget-title-name" href="/tags">标签云</a></h3><div class="widget"> <a href="/tags/过渡/" style="font-size:10px">过渡</a> <a href="/tags/调试/" style="font-size:10px">调试</a> <a href="/tags/网格布局/" style="font-size:10px">网格布局</a> <a href="/tags/滤镜/" style="font-size:10px">滤镜</a> <a href="/tags/文本换行/" style="font-size:10px">文本换行</a> <a href="/tags/弹性布局/" style="font-size:10px">弹性布局</a> <a href="/tags/布局/" style="font-size:10px">布局</a> <a href="/tags/工具/" style="font-size:10px">工具</a> <a href="/tags/垂直居中/" style="font-size:10px">垂直居中</a> <a href="/tags/图片裁切/" style="font-size:10px">图片裁切</a> <a href="/tags/图片处理/" style="font-size:10px">图片处理</a> <a href="/tags/word-wrap/" style="font-size:10px">word-wrap</a> <a href="/tags/word-break/" style="font-size:10px">word-break</a> <a href="/tags/variables/" style="font-size:10px">variables</a> <a href="/tags/transition/" style="font-size:10px">transition</a> <a href="/tags/touch/" style="font-size:10px">touch</a> <a href="/tags/scrollbar/" style="font-size:10px">scrollbar</a> <a href="/tags/layout/" style="font-size:10px">layout</a> <a href="/tags/jQuery插件/" style="font-size:10px">jQuery插件</a> <a href="/tags/grid/" style="font-size:10px">grid</a> <a href="/tags/flex/" style="font-size:10px">flex</a> <a href="/tags/filter/" style="font-size:10px">filter</a> <a href="/tags/events/" style="font-size:10px">events</a> <a href="/tags/console/" style="font-size:10px">console</a> <a href="/tags/columns/" style="font-size:10px">columns</a> <a href="/tags/column-gap/" style="font-size:10px">column-gap</a> <a href="/tags/JavaScript/" style="font-size:30px">JavaScript</a> <a href="/tags/JQuery/" style="font-size:10px">JQuery</a> <a href="/tags/CSS3/" style="font-size:50px">CSS3</a> <a href="/tags/CSS/" style="font-size:30px">CSS</a></div></div></div></div><div id="backTopBtn"> <span><b>0</b><em class="iconfont icon-up"></em></span><i></i><script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script src="//cdn.bootcss.com/clipboard.js/2.0.6/clipboard.min.js"></script><script src="//aimg8.oss-cn-shanghai.aliyuncs.com/plugins/EvyunUi/js/popup.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/codemirror.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/addon/mode/overlay.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/clike/clike.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/javascript/javascript.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/css/css.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/xml/xml.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/htmlmixed/htmlmixed.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/coffeescript/coffeescript.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/pug/pug.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/sass/sass.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/vue/vue.min.js"></script><script src="//cdn.bootcss.com/codemirror/5.52.2/mode/shell/shell.min.js"></script><script src="/js/main.js"></script></div></body>
